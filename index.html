@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NJ DOS Talent Recruitment — Executive Overview</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+
+<!-- Reusable SVG persona illustrations, referenced via <use> -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- Paul (candidate) — warm amber tones, hopeful/professional -->
+    <symbol id="p-paul" viewBox="0 0 200 200">
+        <defs>
+            <linearGradient id="bg-paul" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#3a2b1c"/>
+                <stop offset="1" stop-color="#1f1810"/>
+            </linearGradient>
+        </defs>
+        <rect width="200" height="200" fill="url(#bg-paul)"/>
+        <!-- Shoulders -->
+        <path d="M20 200 Q20 130 100 130 Q180 130 180 200 Z" fill="#5a4530"/>
+        <path d="M40 200 Q40 145 100 145 Q160 145 160 200 Z" fill="#8b6f4e"/>
+        <!-- Neck -->
+        <rect x="88" y="105" width="24" height="35" fill="#e8b48a"/>
+        <!-- Head -->
+        <ellipse cx="100" cy="80" rx="38" ry="42" fill="#e8b48a"/>
+        <!-- Hair -->
+        <path d="M62 70 Q62 40 100 38 Q138 40 138 70 Q138 55 118 50 Q100 46 82 50 Q62 55 62 70Z" fill="#4a3520"/>
+        <!-- Eyes -->
+        <circle cx="86" cy="80" r="3" fill="#2a1e12"/>
+        <circle cx="114" cy="80" r="3" fill="#2a1e12"/>
+        <!-- Nose -->
+        <path d="M100 85 L96 96 L104 96 Z" fill="#c99a72"/>
+        <!-- Smile -->
+        <path d="M88 105 Q100 112 112 105" stroke="#5a3820" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Recruiter (you) — blue/professional, engaged expression -->
+    <symbol id="p-recruiter" viewBox="0 0 200 200">
+        <defs>
+            <linearGradient id="bg-rec" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1c2a3a"/>
+                <stop offset="1" stop-color="#101820"/>
+            </linearGradient>
+        </defs>
+        <rect width="200" height="200" fill="url(#bg-rec)"/>
+        <!-- Shoulders (blazer) -->
+        <path d="M20 200 Q20 130 100 130 Q180 130 180 200 Z" fill="#2b4468"/>
+        <path d="M40 200 Q40 145 100 145 Q160 145 160 200 Z" fill="#3d5f8e"/>
+        <!-- Collar V -->
+        <path d="M85 145 L100 175 L115 145 L100 155 Z" fill="#eef2f9"/>
+        <!-- Neck -->
+        <rect x="88" y="105" width="24" height="35" fill="#e5c4a3"/>
+        <!-- Head -->
+        <ellipse cx="100" cy="80" rx="38" ry="42" fill="#e5c4a3"/>
+        <!-- Hair (long/pulled back) -->
+        <path d="M62 68 Q62 32 100 32 Q138 32 138 68 Q138 55 100 55 Q62 55 62 68 Z" fill="#3a2f28"/>
+        <path d="M138 68 Q145 100 140 130 L128 130 Q133 105 130 70 Z" fill="#3a2f28"/>
+        <!-- Eyes -->
+        <circle cx="86" cy="80" r="3" fill="#2a1e12"/>
+        <circle cx="114" cy="80" r="3" fill="#2a1e12"/>
+        <!-- Nose -->
+        <path d="M100 85 L97 96 L103 96 Z" fill="#c9a685"/>
+        <!-- Smile -->
+        <path d="M88 105 Q100 113 112 105" stroke="#5a3a20" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Hiring Manager — purple accents, slightly older -->
+    <symbol id="p-manager" viewBox="0 0 200 200">
+        <defs>
+            <linearGradient id="bg-mgr" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#2a1c3a"/>
+                <stop offset="1" stop-color="#180f28"/>
+            </linearGradient>
+        </defs>
+        <rect width="200" height="200" fill="url(#bg-mgr)"/>
+        <!-- Shoulders -->
+        <path d="M20 200 Q20 130 100 130 Q180 130 180 200 Z" fill="#3d2b58"/>
+        <path d="M40 200 Q40 145 100 145 Q160 145 160 200 Z" fill="#5b4180"/>
+        <!-- Neck -->
+        <rect x="88" y="105" width="24" height="35" fill="#d6b088"/>
+        <!-- Head -->
+        <ellipse cx="100" cy="80" rx="38" ry="42" fill="#d6b088"/>
+        <!-- Hair (short, salt-and-pepper) -->
+        <path d="M62 72 Q62 42 100 40 Q138 42 138 72 Q138 58 118 54 Q100 50 82 54 Q62 58 62 72 Z" fill="#3a3a3a"/>
+        <path d="M65 65 Q75 63 82 66" stroke="#8a8a8a" stroke-width="2" fill="none"/>
+        <!-- Eyes -->
+        <circle cx="86" cy="80" r="3" fill="#2a1e12"/>
+        <circle cx="114" cy="80" r="3" fill="#2a1e12"/>
+        <!-- Nose -->
+        <path d="M100 85 L96 96 L104 96 Z" fill="#b89570"/>
+        <!-- Slight smile -->
+        <path d="M90 106 Q100 111 110 106" stroke="#5a3820" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Glasses -->
+        <circle cx="86" cy="80" r="9" stroke="#eef2f9" stroke-width="1.5" fill="none"/>
+        <circle cx="114" cy="80" r="9" stroke="#eef2f9" stroke-width="1.5" fill="none"/>
+        <line x1="95" y1="80" x2="105" y2="80" stroke="#eef2f9" stroke-width="1.5"/>
+    </symbol>
+
+    <!-- Paul as employee — green accent for new-hire status -->
+    <symbol id="p-employee" viewBox="0 0 200 200">
+        <defs>
+            <linearGradient id="bg-emp" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1c3a2b"/>
+                <stop offset="1" stop-color="#101f18"/>
+            </linearGradient>
+        </defs>
+        <rect width="200" height="200" fill="url(#bg-emp)"/>
+        <!-- Shoulders -->
+        <path d="M20 200 Q20 130 100 130 Q180 130 180 200 Z" fill="#2b5a45"/>
+        <path d="M40 200 Q40 145 100 145 Q160 145 160 200 Z" fill="#3d8562"/>
+        <!-- Badge lanyard -->
+        <rect x="94" y="130" width="4" height="30" fill="#eef2f9"/>
+        <rect x="86" y="158" width="20" height="14" rx="2" fill="#eef2f9"/>
+        <rect x="88" y="161" width="16" height="2" fill="#34d399"/>
+        <!-- Neck -->
+        <rect x="88" y="105" width="24" height="30" fill="#e8b48a"/>
+        <!-- Head -->
+        <ellipse cx="100" cy="80" rx="38" ry="42" fill="#e8b48a"/>
+        <!-- Hair -->
+        <path d="M62 70 Q62 40 100 38 Q138 40 138 70 Q138 55 118 50 Q100 46 82 50 Q62 55 62 70Z" fill="#4a3520"/>
+        <!-- Eyes -->
+        <circle cx="86" cy="80" r="3" fill="#2a1e12"/>
+        <circle cx="114" cy="80" r="3" fill="#2a1e12"/>
+        <!-- Nose -->
+        <path d="M100 85 L96 96 L104 96 Z" fill="#c99a72"/>
+        <!-- Big smile -->
+        <path d="M86 103 Q100 115 114 103" stroke="#5a3820" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+</svg>
+
+<div class="reveal">
+<div class="slides">
+
+    <!-- ============ 1: TITLE ============ -->
+    <section class="title-slide">
+        <div class="eyebrow">Executive Overview · NJ Department of State</div>
+        <h1>One Continuous Story,<br>from Application to Employee</h1>
+        <p class="subtitle">A modern workforce platform for state government hiring — end to end, powered by AI.</p>
+        <div class="meta">Prepared for the CIO &amp; HR Head · NJ DOS</div>
+    </section>
+
+    <!-- ============ 2: PROBLEM ============ -->
+    <section>
+        <h2>Today, the story breaks four times</h2>
+        <p class="dim" style="max-width:60ch">Every hire at NJ DOS moves through four disconnected systems. Each handoff is a chance to drop information, delay a candidate, or lose a strong hire to another employer.</p>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="num">1</div>
+                <h3>Careers &amp; application intake</h3>
+                <p>Public site, PDF resumes into a shared inbox.</p>
+            </div>
+            <div class="problem-card">
+                <div class="num">2</div>
+                <h3>Recruiter workspace</h3>
+                <p>Spreadsheets, manual resume screening, side-channel emails.</p>
+            </div>
+            <div class="problem-card">
+                <div class="num">3</div>
+                <h3>Offer &amp; legal</h3>
+                <p>Word templates, mail merges, IT tickets that get forgotten.</p>
+            </div>
+            <div class="problem-card">
+                <div class="num">4</div>
+                <h3>Onboarding &amp; HR</h3>
+                <p>Employee re-created in a separate HRIS, tasks re-entered, day one chaos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 3: WHAT WE'RE SHOWING ============ -->
+    <section>
+        <h2>What we'll walk through today</h2>
+        <p class="dim" style="max-width:55ch">A single platform that carries one candidate — Paul Marshall — from a public careers site through his first day as an NJ DOS employee. Same data, same records, four different faces for four different people.</p>
+        <div class="arc arc-slide">
+            <div class="arc-node n1">
+                <div class="arc-dot">🔍</div>
+                <div class="arc-label"><strong>Discover</strong>Careers portal</div>
+            </div>
+            <div class="arc-node n2">
+                <div class="arc-dot">📋</div>
+                <div class="arc-label"><strong>Recruit</strong>AI-assisted review</div>
+            </div>
+            <div class="arc-node n3">
+                <div class="arc-dot">🤝</div>
+                <div class="arc-label"><strong>Offer</strong>One-click generation</div>
+            </div>
+            <div class="arc-node n4">
+                <div class="arc-dot">🚀</div>
+                <div class="arc-label"><strong>Onboard</strong>Zero-gap conversion</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 4: THE PEOPLE ============ -->
+    <section>
+        <h2>Three people, one shared record</h2>
+        <p class="dim" style="max-width:55ch">Everyone we're about to meet works from the same underlying data — they just see the parts that matter to their role.</p>
+        <div class="persona-row">
+            <div class="persona-card paul">
+                <div class="avatar"><svg width="130" height="130"><use href="#p-paul"/></svg></div>
+                <span class="role">The Candidate</span>
+                <h3>Paul Marshall</h3>
+                <p>Senior Software Engineer, applying to NJ DOS. Wants a modern application experience and clear communication.</p>
+            </div>
+            <div class="persona-card recruiter">
+                <div class="avatar"><svg width="130" height="130"><use href="#p-recruiter"/></svg></div>
+                <span class="role">The Recruiter</span>
+                <h3>NJ DOS Talent Team</h3>
+                <p>Reviews applications, coordinates interviews, drives offers. Wants their time on humans, not on data entry.</p>
+            </div>
+            <div class="persona-card manager">
+                <div class="avatar"><svg width="130" height="130"><use href="#p-manager"/></svg></div>
+                <span class="role">The Hiring Manager</span>
+                <h3>Engineering Leadership</h3>
+                <p>Owns the role. Wants a fast, confident yes/no on candidates with the evidence to back it up.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 5-14: TEN STAGES ============ -->
+
+    <section>
+        <div class="stage-slide">
+            <div class="stage-header">
+                <div class="stage-number">1</div>
+                <div class="stage-meta">
+                    <div class="eyebrow">Stage 1 · Discovery</div>
+                    <h2>NJ DOS Careers Portal</h2>
+                </div>
+            </div>
+            <div class="stage-body">
+                <div class="stage-persona paul">
+                    <div class="avatar-small"><svg width="100" height="100"><use href="#p-paul"/></svg></div>
+                    <div class="persona-name">Paul Marshall</div>
+                    <div class="persona-role">Candidate</div>
+                </div>
+                <div class="stage-content">
+                    <div class="they-see">
+                        <h3>What Paul sees</h3>
+                        <p>A modern, searchable job board on the state's public site. Roles filterable by department, type, and location — always live, never stale.</p>
+                    </div>
+                    <div class="ai-does">
+                        <h3 class="ai">Where AI shows up</h3>
+                        <p>Related-role recommendations if the first hit isn't quite the right fit — quietly doubling the chance a good candidate finds a place they belong.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="stage-slide">
+            <div class="stage-header">
+                <div class="stage-number">2</div>
+                <div class="stage-meta">
+                    <div class="eyebrow">Stage 2 · Consideration</div>
+                    <h2>Job Detail Page</h2>
+                </div>
+            </div>
+            <div class="stage-body">
+                <div class="stage-persona paul">
+                    <div class="avatar-small"><svg width="100" height="100"><use href="#p-paul"/></svg></div>
+                    <div class="persona-name">Paul Marshall</div>
+                    <div class="persona-role">Candidate</div>
+                </div>
+                <div class="stage-content">
+                    <div class="they-see">
+                        <h3>What Paul sees</h3>
+                        <p>The full role: description, responsibilities, required qualifications, salary band, department, hiring manager. Every field mirrors the record NJ DOS owns internally — one source of truth.</p>
+                    </div>
+                    <div class="ai-does">
+                        <h3 class="ai">Where AI shows up</h3>
+                        <p>"Related roles" surfaces adjacent openings based on skill overlap. If this job isn't Paul's, the platform tries to keep him in the state's pipeline anyway.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="stage-slide">
+            <div class="stage-header">
+                <div class="stage-number">3</div>
+                <div class="stage-meta">
+                    <div class="eyebrow">Stage 3 · Application</div>
+                    <h2>Submit Resume</h2>
+                </div>
+            </div>
+            <div class="stage-body">
+                <div class="stage-persona paul">
+                    <div class="avatar-small"><svg width="100" height="100"><use href="#p-paul"/></svg></div>
+                    <div class="persona-name">Paul Marshall</div>
+                    <div class="persona-role">Candidate</div>
+                </div>
+                <div class="stage-content">
+                    <div class="they-see">
+                        <h3>What Paul sees</h3>
+                        <p>A lightweight form — name, email, resume upload, a couple of qualifying questions. Then a real confirmation that his application landed, not silence.</p>
+                    </div>
+                    <div class="ai-does">
+                        <h3 class="ai">Where AI shows up</h3>
+                        <p>Resume parsed on submit — work history, skills, education, certifications turned into structured data before it hits the recruiter's queue. Zero re-typing downstream.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="stage-slide">
+            <div class="stage-header">
+                <div class="stage-number">4</div>
+                <div class="stage-meta">
+                    <div class="eyebrow">Stage 4 · Triage</div>
+                    <h2>Recruiter Workspace</h2>
+                </div>
+            </div>
+            <div class="stage-body">
+                <div class="stage-persona recruiter">
+                    <div class="avatar-small"><svg width="100" height="100"><use href="#p-recruiter"/></svg></div>
+                    <div class="persona-name">NJ DOS Recruiter</div>
+                    <div class="persona-role">Talent Team</div>
+                </div>
+                <div class="stage-content">
+                    <div class="they-see">
+                        <h3>What the recruiter sees</h3>
+                        <p>Monday morning: one queue, applications grouped by role, sorted by qualification fit. Top of queue is the highest-probability hire, not the newest application.</p>
+                    </div>
+                    <div class="ai-does">
+                        <h3 class="ai">Where AI shows up</h3>
+                        <p>Every candidate arrives pre-scored against the job requisition. The recruiter's time goes to the top ten, not to sorting the bottom thirty.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="stage-slide">
+            <div class="stage-header">
+                <div class="stage-number">5</div>
+                <div class="stage-meta">
+                    <div class="eyebrow">Stage 5 · Assessment</div>
+                    <h2>Candidate Record with AI Summary</h2>
+                </div>
+            </div>
+            <div class="stage-body">
+                <div class="stage-persona recruiter">
+                    <div class="avatar-small"><svg width="100" height="100"><use href="#p-recruiter"/></svg></div>
+                    <div class="persona-name">NJ DOS Recruiter</div>
+                    <div class="persona-role">Talent Team</div>
+                </div>
+                <div class="stage-content">
+                    <div class="they-see">
+                        <h3>What the recruiter sees</h3>
+                        <p>Paul's record with a plain-English AI summary at the top: experience, skill match, and gaps. Fifteen minutes of resume-reading collapses to three seconds of context.</p>
+                    </div>
+                    <div class="ai-does">
+                        <h3 class="ai">Where AI shows up</h3>
+                        <p>Conversational qualification match — the recruiter can ask "which requirements does Paul meet?" and get a per-requirement breakdown, each answer citing the exact line from his resume. <strong>Decision support, not decision replacement.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="stage-slide">
+            <div class="stage-header">
+                <div class="stage-number">6</div>
+                <div class="stage-meta">
+                    <div class="eyebrow">Stage 6 · Progression</div>
+                    <h2>Candidate Pipeline</h2>
+                </div>
+            </div>
+            <div class="stage-body">
+                <div class="stage-persona recruiter">
+                    <div class="avatar-small"><svg width="100" height="100"><use href="#p-recruiter"/></svg></div>
+                    <div class="persona-name">NJ DOS Recruiter</div>
+                    <div class="persona-role">Talent Team</div>
+                </div>
+                <div class="stage-content">
+                    <div class="they-see">
+                        <h3>What the recruiter sees</h3>
+                        <p>A visible pipeline: Submitted → In Review → Interview → Offer → Accepted → Hired. Moving Paul forward is a single click, and the system knows what to do next.</p>
+                    </div>
+                    <div class="ai-does">
+                        <h3 class="ai">Automation behind each stage change</h3>
+                        <p>Move to In Review? Hiring manager gets the AI summary. Move to Interview? Scheduling kicks in. Move to Offer? Legal review is notified. <strong>Every handoff is instrumented.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="stage-slide">
+            <div class="stage-header">
+                <div class="stage-number">7</div>
+                <div class="stage-meta">
+                    <div class="eyebrow">Stage 7 · Evaluation</div>
+                    <h2>Interview Feedback</h2>
+                </div>
+            </div>
+            <div class="stage-body">
+                <div class="stage-persona manager">
+                    <div class="avatar-small"><svg width="100" height="100"><use href="#p-manager"/></svg></div>
+                    <div class="persona-name">Hiring Manager</div>
+                    <div class="persona-role">Engineering Lead</div>
+                </div>
+                <div class="stage-content">
+                    <div class="they-see">
+                        <h3>What the hiring manager sees</h3>
+                        <p>A structured evaluation form: score per interviewer, per competency (technical, communication, mission fit). Everyone measured against the same rubric — comparable, auditable, defensible.</p>
+                    </div>
+                    <div class="ai-does">
+                        <h3 class="ai">Where AI shows up</h3>
+                        <p>Interview synthesis: consensus themes, dissenting concerns, hiring recommendation. Grounds the go/no-go conversation in a shared picture — <strong>efficiency and fairness in the same motion.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="stage-slide">
+            <div class="stage-header">
+                <div class="stage-number">8</div>
+                <div class="stage-meta">
+                    <div class="eyebrow">Stage 8 · Offer</div>
+                    <h2>Offer Generation &amp; Delivery</h2>
+                </div>
+            </div>
+            <div class="stage-body">
+                <div class="stage-persona recruiter">
+                    <div class="avatar-small"><svg width="100" height="100"><use href="#p-recruiter"/></svg></div>
+                    <div class="persona-name">NJ DOS Recruiter</div>
+                    <div class="persona-role">Talent Team</div>
+                </div>
+                <div class="stage-content">
+                    <div class="they-see">
+                        <h3>What the recruiter sees</h3>
+                        <p>A pre-filled offer generator that appears on Paul's record the moment he reaches "Offer." Name, title, start date, salary — already there. One click renders a branded PDF, one click sends it.</p>
+                    </div>
+                    <div class="ai-does">
+                        <h3 class="ai">What used to take a week</h3>
+                        <p>Word docs, mail merges, chasing legal, forgetting to CC someone. Now: <strong>generate, preview, send — one click, tracked, version-controlled on the record.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="stage-slide">
+            <div class="stage-header">
+                <div class="stage-number">9</div>
+                <div class="stage-meta">
+                    <div class="eyebrow">Stage 9 · Conversion · <span style="color:var(--hero)">Hero Moment</span></div>
+                    <h2>Candidate → Employee, in One Click</h2>
+                </div>
+            </div>
+            <div class="stage-body">
+                <div class="stage-persona recruiter">
+                    <div class="avatar-small"><svg width="100" height="100"><use href="#p-recruiter"/></svg></div>
+                    <div class="persona-name">NJ DOS Recruiter</div>
+                    <div class="persona-role">Talent Team</div>
+                </div>
+                <div class="stage-content">
+                    <div class="they-see">
+                        <h3>What the recruiter sees</h3>
+                        <p>Paul accepts. A "Convert to Employee" step appears. Three-step guided flow: confirm details (all pre-filled), pick an onboarding playbook (engineering, sales, or standard), review and convert.</p>
+                    </div>
+                    <div class="ai-does">
+                        <h3 class="ai">The gap that closes to zero</h3>
+                        <p>One click creates the Employee record, generates a role-specific onboarding checklist (9 tasks for engineering), and links back to Paul's application. <strong>No re-typing. No dropped tasks. One continuous story.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="stage-slide">
+            <div class="stage-header">
+                <div class="stage-number">10</div>
+                <div class="stage-meta">
+                    <div class="eyebrow">Stage 10 · Onboarding</div>
+                    <h2>Employee Onboarding Portal</h2>
+                </div>
+            </div>
+            <div class="stage-body">
+                <div class="stage-persona employee">
+                    <div class="avatar-small"><svg width="100" height="100"><use href="#p-employee"/></svg></div>
+                    <div class="persona-name">Paul Marshall</div>
+                    <div class="persona-role">New Employee</div>
+                </div>
+                <div class="stage-content">
+                    <div class="they-see">
+                        <h3>What Paul sees on day one</h3>
+                        <p>A welcome portal with his nine tasks, in order, with help text on each. I-9, benefits, laptop pickup, first 1:1, dev environment setup. Progress visible to him, to his recruiter, and to his manager — in real time.</p>
+                    </div>
+                    <div class="ai-does">
+                        <h3 class="ai">The loop closes</h3>
+                        <p>The same continuous record that began when Paul searched a job on the careers site now carries him into his first week. <strong>No system boundaries. One story, told well.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 15: FULL ARC RECAP ============ -->
+    <section>
+        <h2 style="text-align:center">One record. One story. Four faces.</h2>
+        <div class="arc" style="margin-top:70px">
+            <div class="arc-node n1">
+                <div class="arc-dot"><svg width="52" height="52"><use href="#p-paul"/></svg></div>
+                <div class="arc-label"><strong>Paul (Candidate)</strong>Stages 1–3</div>
+            </div>
+            <div class="arc-node n2">
+                <div class="arc-dot"><svg width="52" height="52"><use href="#p-recruiter"/></svg></div>
+                <div class="arc-label"><strong>Recruiter</strong>Stages 4–6, 8–9</div>
+            </div>
+            <div class="arc-node n3">
+                <div class="arc-dot"><svg width="52" height="52"><use href="#p-manager"/></svg></div>
+                <div class="arc-label"><strong>Hiring Manager</strong>Stage 7</div>
+            </div>
+            <div class="arc-node n4">
+                <div class="arc-dot"><svg width="52" height="52"><use href="#p-employee"/></svg></div>
+                <div class="arc-label"><strong>Paul (Employee)</strong>Stage 10 &amp; beyond</div>
+            </div>
+        </div>
+        <p class="dim" style="text-align:center; margin-top:30px; max-width:60ch; margin-left:auto; margin-right:auto">Every person above is looking at the same underlying data. They just see the parts that matter to their role.</p>
+    </section>
+
+    <!-- ============ 16: TAKEAWAYS ============ -->
+    <section>
+        <h2>What this means for you</h2>
+        <div class="take-grid">
+            <div class="take-card cio">
+                <div class="who">
+                    <span class="who-dot"></span>
+                    <span class="who-label">For the CIO</span>
+                </div>
+                <h3>One platform, not four</h3>
+                <ul>
+                    <li><strong>Consolidation:</strong> careers, ATS, offer generation, HR onboarding — one data model, one security model, one place to audit.</li>
+                    <li><strong>AI grounded in your data:</strong> every AI output cites its source; nothing hallucinated, everything reviewable.</li>
+                    <li><strong>Extensible:</strong> the same platform is already running your policy workflows. Talent joins as another tenant, not another silo.</li>
+                    <li><strong>Compliance-friendly:</strong> structured evaluations, versioned offer PDFs, full audit trail from application to hire.</li>
+                </ul>
+            </div>
+            <div class="take-card hr">
+                <div class="who">
+                    <span class="who-dot"></span>
+                    <span class="who-label">For the Head of HR</span>
+                </div>
+                <h3>Recruiters back on human work</h3>
+                <ul>
+                    <li><strong>15 minutes per resume, reclaimed:</strong> AI does the first-pass reading. Your team spends time on candidates, not on triage.</li>
+                    <li><strong>Fairness built in:</strong> structured evaluations and AI-cited fit summaries reduce interviewer bias and support defensible hiring decisions.</li>
+                    <li><strong>Candidate experience:</strong> the citizen sees a modern, transparent process — critical for the state's brand as an employer.</li>
+                    <li><strong>Day-one ready:</strong> zero-gap conversion means laptops, badges, and training are prepped before the new hire walks in.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 17: CLOSE ============ -->
+    <section>
+        <div class="close-slide">
+            <h1>Not just a hiring system.<br>A workforce platform for state government.</h1>
+            <p>Ready to walk through it live?</p>
+        </div>
+    </section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    controls: true,
+    progress: true,
+    transition: 'slide',
+    transitionSpeed: 'default',
+    center: false,
+    width: 1280,
+    height: 800,
+    margin: 0.06
+});
+</script>
+</body>
+</html>
