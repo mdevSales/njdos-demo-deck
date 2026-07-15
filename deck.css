@@ -14,17 +14,17 @@
     --ink-dim: #5a5a5a;
     --ink-quiet: #8a8a8a;
 
-    /* Accent palette (muted, magazine-y) */
-    --coral: #d97757;         /* warm orange-red, primary */
-    --coral-soft: #f4d5c1;
-    --terracotta: #c05621;
-    --sage: #6b8e5a;
-    --sage-soft: #d4e0c9;
-    --plum: #7d4a5c;
-    --plum-soft: #e5c9d0;
-    --navy: #2c3e5c;
-    --navy-soft: #c8d4e3;
-    --gold: #c9962b;
+    /* NJ Department of State palette — buff & blue */
+    --coral: #002b5c;         /* NJ state blue — primary */
+    --coral-soft: #d6e0ee;    /* NJ blue-light */
+    --terracotta: #001a3d;    /* NJ blue-dark */
+    --sage: #4a6741;
+    --sage-soft: #d9e3d4;
+    --plum: #6d4c41;
+    --plum-soft: #e0d7d1;
+    --navy: #a08b52;          /* NJ buff-dark (recruiter) */
+    --navy-soft: #efe5cc;     /* NJ buff-light */
+    --gold: #c9b37a;          /* NJ buff */
 
     /* Persona color coding */
     --paul-tint: var(--coral-soft);
