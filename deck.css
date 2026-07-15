@@ -1,322 +1,558 @@
+/* ========================================================
+   NJ DOS Demo Deck — editorial / Canva-style aesthetic
+   Warm neutrals, generous whitespace, Playfair + Inter type
+   ======================================================== */
+
 :root {
-    --bg: #0a1628;
-    --bg-2: #0f1e37;
-    --panel: #142848;
-    --border: #1e3457;
-    --ink: #eef2f9;
-    --ink-dim: #93a3c4;
-    --accent: #4a9eff;
-    --accent-2: #6db3ff;
-    --hero: #ffb84d;
-    --success: #34d399;
-    --pauldot: #ffb84d;
-    --recdot: #4a9eff;
-    --mgrdot: #c084fc;
-    --employeedot: #34d399;
+    /* Editorial neutrals */
+    --cream: #f7f2ea;
+    --paper: #fbf7f0;
+    --stone: #e8dfd2;
+    --sand: #d4c5b0;
+    --charcoal: #2a2a2a;
+    --ink: #1a1a1a;
+    --ink-dim: #5a5a5a;
+    --ink-quiet: #8a8a8a;
+
+    /* Accent palette (muted, magazine-y) */
+    --coral: #d97757;         /* warm orange-red, primary */
+    --coral-soft: #f4d5c1;
+    --terracotta: #c05621;
+    --sage: #6b8e5a;
+    --sage-soft: #d4e0c9;
+    --plum: #7d4a5c;
+    --plum-soft: #e5c9d0;
+    --navy: #2c3e5c;
+    --navy-soft: #c8d4e3;
+    --gold: #c9962b;
+
+    /* Persona color coding */
+    --paul-tint: var(--coral-soft);
+    --paul-accent: var(--coral);
+    --recruiter-tint: var(--navy-soft);
+    --recruiter-accent: var(--navy);
+    --manager-tint: var(--plum-soft);
+    --manager-accent: var(--plum);
+    --employee-tint: var(--sage-soft);
+    --employee-accent: var(--sage);
 }
+
+/* ========================================================
+   Base
+   ======================================================== */
 
 .reveal {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Segoe UI, Roboto, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
     color: var(--ink);
+    letter-spacing: -0.005em;
 }
 
-.reveal .slides {
+.reveal .slides section {
+    background: var(--paper);
+    padding: 60px 70px;
     text-align: left;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
     color: var(--ink);
-    font-weight: 600;
     text-transform: none;
-    letter-spacing: -0.01em;
-    text-align: left;
-    line-height: 1.15;
-}
-
-.reveal h1 { font-size: 2.8em; }
-.reveal h2 { font-size: 1.9em; margin-bottom: 0.4em; }
-.reveal h3 { font-size: 1.2em; margin-bottom: 0.3em; color: var(--accent-2); }
-
-.reveal p { line-height: 1.5; color: var(--ink); }
-.reveal .dim { color: var(--ink-dim); }
-.reveal strong { color: var(--hero); font-weight: 600; }
-
-/* ====== Slide backgrounds ====== */
-.reveal .slides section {
-    background: linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
-}
-
-/* ====== Title slide ====== */
-.title-slide {
+    letter-spacing: -0.015em;
+    line-height: 1.08;
     text-align: left;
 }
-.title-slide .eyebrow {
-    color: var(--accent-2);
-    font-size: 0.7em;
-    letter-spacing: 0.15em;
+
+.reveal h1 { font-size: 3.4em; margin: 0; }
+.reveal h2 { font-size: 2.4em; margin: 0 0 0.4em; }
+.reveal h3 { font-size: 1.3em; margin: 0 0 0.3em; }
+
+.reveal p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--ink);
+    font-size: 0.82em;
+    margin: 0 0 0.8em;
+}
+.reveal p.lead { font-size: 1em; color: var(--ink-dim); max-width: 32ch; }
+
+.reveal .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6em;
     font-weight: 600;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
+    color: var(--coral);
     margin-bottom: 20px;
+    display: block;
+}
+
+.reveal strong { color: var(--terracotta); font-weight: 600; }
+
+/* ========================================================
+   Reveal chrome
+   ======================================================== */
+
+.reveal .progress {
+    color: var(--coral);
+    height: 3px;
+}
+.reveal .controls { color: var(--ink-quiet); }
+.reveal .slide-number {
+    color: var(--ink-quiet);
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    right: 24px;
+    bottom: 20px;
+}
+
+/* ========================================================
+   Slide 1 — Title
+   ======================================================== */
+
+.title-slide {
+    background:
+        radial-gradient(ellipse at top right, var(--coral-soft) 0%, transparent 55%),
+        radial-gradient(ellipse at bottom left, var(--sand) 0%, transparent 60%),
+        var(--paper) !important;
+    padding: 80px 90px !important;
 }
 .title-slide h1 {
-    font-size: 3.2em;
-    line-height: 1.05;
-    margin-bottom: 0.3em;
+    font-size: 4.2em;
+    line-height: 1.02;
+    max-width: 14ch;
+    margin-bottom: 30px;
+}
+.title-slide h1 em {
+    font-style: italic;
+    color: var(--coral);
+    font-weight: 400;
 }
 .title-slide .subtitle {
-    font-size: 1.2em;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05em;
     color: var(--ink-dim);
-    max-width: 22ch;
-    line-height: 1.4;
+    max-width: 44ch;
+    line-height: 1.55;
+    margin-top: 24px;
+    font-weight: 400;
 }
-.title-slide .meta {
+.title-slide .footer {
     position: absolute;
-    bottom: 60px;
-    left: 40px;
-    font-size: 0.7em;
-    color: var(--ink-dim);
-    letter-spacing: 0.08em;
+    bottom: 50px;
+    left: 90px;
+    right: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65em;
+    color: var(--ink-quiet);
+    letter-spacing: 0.15em;
     text-transform: uppercase;
+    border-top: 1px solid var(--stone);
+    padding-top: 20px;
 }
 
-/* ====== Problem slide ====== */
+/* ========================================================
+   Slide 2 — Problem
+   ======================================================== */
+
 .problem-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 30px;
-}
-.problem-card {
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-}
-.problem-card .num {
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--hero);
-    margin-bottom: 8px;
-    line-height: 1;
-}
-.problem-card p { margin: 0; font-size: 0.85em; }
-
-/* ====== Persona cards ====== */
-.persona-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     margin-top: 30px;
 }
-.persona-card {
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 22px 18px;
-    text-align: center;
+.problem-card {
+    background: white;
+    border: 1px solid var(--stone);
+    border-radius: 4px;
+    padding: 24px 26px;
     position: relative;
-}
-.persona-card .avatar {
-    width: 130px;
-    height: 130px;
-    margin: 0 auto 14px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--panel) 0%, var(--border) 100%);
-    border: 3px solid var(--accent);
-    box-shadow: 0 0 40px rgba(74,158,255,0.2);
     overflow: hidden;
 }
-.persona-card.paul .avatar { border-color: var(--pauldot); box-shadow: 0 0 40px rgba(255,184,77,0.25); }
-.persona-card.recruiter .avatar { border-color: var(--recdot); box-shadow: 0 0 40px rgba(74,158,255,0.25); }
-.persona-card.manager .avatar { border-color: var(--mgrdot); box-shadow: 0 0 40px rgba(192,132,252,0.25); }
-.persona-card h3 { color: var(--ink); font-size: 1.05em; margin: 0 0 4px; text-align: center; }
-.persona-card .role {
-    font-size: 0.7em;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent-2);
-    margin-bottom: 12px;
+.problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--coral);
+}
+.problem-card .step {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.4em;
+    font-weight: 700;
+    color: var(--coral);
+    line-height: 1;
+    margin-bottom: 6px;
     display: block;
 }
-.persona-card.paul .role { color: var(--pauldot); }
-.persona-card.recruiter .role { color: var(--recdot); }
-.persona-card.manager .role { color: var(--mgrdot); }
-.persona-card p {
-    font-size: 0.8em;
+.problem-card h3 {
+    font-size: 0.95em;
+    margin-bottom: 6px;
+    color: var(--ink);
+}
+.problem-card p {
+    font-size: 0.72em;
     color: var(--ink-dim);
-    text-align: left;
+    margin: 0;
     line-height: 1.5;
-    margin: 8px 0 0;
 }
 
-/* ====== Stage slides ====== */
-.stage-slide {
+/* ========================================================
+   Slide 3 — Arc / lifecycle
+   ======================================================== */
+
+.arc-wrap {
+    margin-top: 60px;
+    position: relative;
+    padding: 0 20px;
+}
+.arc-line {
+    position: absolute;
+    top: 42px;
+    left: 8%;
+    right: 8%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--paul-accent), var(--recruiter-accent), var(--manager-accent), var(--employee-accent));
+    z-index: 0;
+}
+.arc-nodes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+    z-index: 1;
+}
+.arc-node {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    padding-top: 30px;
-}
-.stage-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
-    margin-bottom: 24px;
-}
-.stage-number {
-    width: 68px;
-    height: 68px;
-    border-radius: 50%;
-    background: var(--panel);
-    border: 2px solid var(--accent);
-    display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.8em;
-    font-weight: 700;
-    color: var(--accent-2);
-    flex-shrink: 0;
-}
-.stage-meta { flex: 1; }
-.stage-meta .eyebrow {
-    color: var(--accent-2);
-    font-size: 0.65em;
-    letter-spacing: 0.15em;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-}
-.stage-meta h2 {
-    margin: 0;
-    font-size: 1.7em;
-}
-
-.stage-body {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 30px;
-    align-items: start;
-}
-.stage-persona {
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px;
     text-align: center;
+    padding: 0 12px;
 }
-.stage-persona .avatar-small {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 10px;
+.arc-icon {
+    width: 84px;
+    height: 84px;
     border-radius: 50%;
+    background: var(--paper);
+    border: 2px solid var(--coral);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--panel) 0%, var(--border) 100%);
-    border: 3px solid var(--accent);
-    overflow: hidden;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--coral);
+    margin-bottom: 20px;
+    box-shadow: 0 0 0 6px var(--paper);
 }
-.stage-persona.paul .avatar-small { border-color: var(--pauldot); }
-.stage-persona.recruiter .avatar-small { border-color: var(--recdot); }
-.stage-persona.manager .avatar-small { border-color: var(--mgrdot); }
-.stage-persona.employee .avatar-small { border-color: var(--employeedot); }
-.stage-persona .persona-name {
-    font-size: 0.85em;
-    font-weight: 600;
+.arc-node.n1 .arc-icon { border-color: var(--paul-accent); color: var(--paul-accent); background: var(--paul-tint); }
+.arc-node.n2 .arc-icon { border-color: var(--recruiter-accent); color: var(--recruiter-accent); background: var(--recruiter-tint); }
+.arc-node.n3 .arc-icon { border-color: var(--manager-accent); color: var(--manager-accent); background: var(--manager-tint); }
+.arc-node.n4 .arc-icon { border-color: var(--employee-accent); color: var(--employee-accent); background: var(--employee-tint); }
+
+.arc-node .arc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05em;
+    font-weight: 700;
     color: var(--ink);
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
-.stage-persona .persona-role {
-    font-size: 0.65em;
-    letter-spacing: 0.1em;
-    color: var(--ink-dim);
-    text-transform: uppercase;
-}
-
-.stage-content h3 {
-    font-size: 1em;
-    margin-top: 0;
-    margin-bottom: 6px;
-    color: var(--accent-2);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+.arc-node .arc-sub {
+    font-family: 'Inter', sans-serif;
     font-size: 0.7em;
-}
-.stage-content h3.ai { color: var(--hero); }
-.stage-content p { font-size: 0.85em; margin: 0 0 18px; }
-.stage-content .they-see, .stage-content .ai-does {
-    background: var(--panel);
-    border-left: 3px solid var(--accent);
-    padding: 12px 16px;
-    border-radius: 6px;
-    margin-bottom: 12px;
-}
-.stage-content .ai-does {
-    border-left-color: var(--hero);
-    background: rgba(255,184,77,0.06);
+    color: var(--ink-dim);
+    line-height: 1.4;
+    max-width: 18ch;
 }
 
-/* ====== Arc slide ====== */
-.arc-slide h2 { text-align: center; }
-.arc {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 50px 0 30px;
-    padding: 0 20px;
+/* ========================================================
+   Slide 4 — Persona cards (cast)
+   ======================================================== */
+
+.persona-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+.persona-card {
+    background: white;
+    border: 1px solid var(--stone);
+    border-radius: 6px;
+    padding: 26px 22px;
+    text-align: center;
     position: relative;
 }
-.arc::before {
+.persona-card .photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    background-size: cover;
+    background-position: center 20%;
+    background-color: var(--stone);
+    border: 4px solid white;
+    box-shadow: 0 0 0 2px var(--coral-soft);
+    overflow: hidden;
+}
+.persona-card.paul .photo { box-shadow: 0 0 0 2px var(--paul-accent); }
+.persona-card.recruiter .photo { box-shadow: 0 0 0 2px var(--recruiter-accent); }
+.persona-card.manager .photo { box-shadow: 0 0 0 2px var(--manager-accent); }
+
+.persona-card .role-tag {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.55em;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    background: var(--stone);
+    color: var(--ink-dim);
+}
+.persona-card.paul .role-tag { background: var(--paul-tint); color: var(--terracotta); }
+.persona-card.recruiter .role-tag { background: var(--recruiter-tint); color: var(--recruiter-accent); }
+.persona-card.manager .role-tag { background: var(--manager-tint); color: var(--manager-accent); }
+
+.persona-card h3 {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+    text-align: center;
+}
+.persona-card p {
+    font-size: 0.72em;
+    color: var(--ink-dim);
+    text-align: center;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 24ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================================
+   Slides 5-14 — Stage detail slides (magazine layout)
+   ======================================================== */
+
+.stage-slide {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 50px;
+    align-items: center;
+    height: 100%;
+}
+
+.stage-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: var(--cream);
+    border-radius: 6px;
+    height: 100%;
+    position: relative;
+}
+.stage-visual::after {
     content: '';
     position: absolute;
     top: 30px;
-    left: 40px;
-    right: 40px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--pauldot) 0%, var(--recdot) 33%, var(--mgrdot) 66%, var(--employeedot) 100%);
-    z-index: 0;
-    border-radius: 2px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    border-top: 2px solid var(--coral);
+    border-right: 2px solid var(--coral);
 }
-.arc-node {
+.stage-visual::before {
+    content: '';
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: 30px;
+    height: 30px;
+    border-bottom: 2px solid var(--coral);
+    border-left: 2px solid var(--coral);
+}
+.stage-visual .photo-lg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center 20%;
+    background-color: var(--stone);
+    border: 6px solid white;
+    box-shadow: 0 0 0 3px var(--coral);
+    margin-bottom: 22px;
+}
+.stage-visual.paul .photo-lg { box-shadow: 0 0 0 3px var(--paul-accent); }
+.stage-visual.recruiter .photo-lg { box-shadow: 0 0 0 3px var(--recruiter-accent); }
+.stage-visual.manager .photo-lg { box-shadow: 0 0 0 3px var(--manager-accent); }
+.stage-visual.employee .photo-lg { box-shadow: 0 0 0 3px var(--employee-accent); }
+
+.stage-visual .persona-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 4px;
+}
+.stage-visual .persona-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65em;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    text-align: center;
+}
+
+.stage-content .stage-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    color: var(--coral);
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 8px;
+}
+.stage-content h2 {
+    font-size: 2.2em;
+    margin-bottom: 24px;
+    max-width: 20ch;
+}
+.stage-block {
+    padding: 16px 20px;
+    border-left: 3px solid var(--stone);
+    margin-bottom: 16px;
+}
+.stage-block.experience { border-left-color: var(--navy); background: var(--navy-soft); background: linear-gradient(90deg, rgba(200,212,227,0.35) 0%, transparent 100%); }
+.stage-block.ai { border-left-color: var(--gold); background: linear-gradient(90deg, rgba(201,150,43,0.12) 0%, transparent 100%); }
+
+.stage-block .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.55em;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-bottom: 6px;
+    display: block;
+}
+.stage-block.experience .label { color: var(--navy); }
+.stage-block.ai .label { color: var(--gold); }
+.stage-block p {
+    font-size: 0.78em;
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.55;
+}
+
+/* Hero stage badge */
+.hero-badge {
+    display: inline-block;
+    background: var(--coral);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.55em;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+/* ========================================================
+   Slide 15 — Recap arc
+   ======================================================== */
+
+.recap-slide { text-align: center; }
+.recap-slide h2 {
+    text-align: center;
+    max-width: 22ch;
+    margin: 0 auto 20px;
+}
+.recap-slide h2 em { font-style: italic; color: var(--coral); font-weight: 400; }
+.recap-slide .lead {
+    text-align: center;
+    max-width: 50ch;
+    margin: 0 auto 60px;
+    color: var(--ink-dim);
+    font-size: 0.9em;
+}
+
+.recap-nodes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
     position: relative;
-    z-index: 1;
+}
+.recap-nodes::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--paul-accent), var(--recruiter-accent), var(--manager-accent), var(--employee-accent));
+    z-index: 0;
+}
+.recap-node {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    width: 130px;
+    position: relative;
+    z-index: 1;
 }
-.arc-dot {
-    width: 60px;
-    height: 60px;
+.recap-node .photo-md {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    background: var(--bg);
-    border: 3px solid var(--accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-    margin-bottom: 12px;
+    background-size: cover;
+    background-position: center 20%;
+    background-color: var(--paper);
+    border: 4px solid var(--paper);
+    box-shadow: 0 0 0 2px var(--coral);
+    margin-bottom: 14px;
 }
-.arc-node.n1 .arc-dot { border-color: var(--pauldot); }
-.arc-node.n2 .arc-dot { border-color: var(--recdot); }
-.arc-node.n3 .arc-dot { border-color: var(--mgrdot); }
-.arc-node.n4 .arc-dot { border-color: var(--employeedot); }
-.arc-node .arc-label {
-    font-size: 0.75em;
-    color: var(--ink-dim);
-    line-height: 1.35;
-}
-.arc-node .arc-label strong {
-    display: block;
+.recap-node.paul .photo-md { box-shadow: 0 0 0 2px var(--paul-accent); }
+.recap-node.recruiter .photo-md { box-shadow: 0 0 0 2px var(--recruiter-accent); }
+.recap-node.manager .photo-md { box-shadow: 0 0 0 2px var(--manager-accent); }
+.recap-node.employee .photo-md { box-shadow: 0 0 0 2px var(--employee-accent); }
+.recap-node .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95em;
+    font-weight: 700;
     color: var(--ink);
-    font-size: 1.1em;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
+}
+.recap-node .stages {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6em;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
 }
 
-/* ====== Takeaways ====== */
+/* ========================================================
+   Slide 16 — Takeaways
+   ======================================================== */
+
 .take-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -324,71 +560,143 @@
     margin-top: 30px;
 }
 .take-card {
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 24px;
+    background: white;
+    border: 1px solid var(--stone);
+    border-radius: 6px;
+    padding: 34px 32px;
+    position: relative;
 }
-.take-card .who {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
+.take-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--coral);
+    border-radius: 6px 6px 0 0;
 }
-.take-card .who-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--accent);
-}
-.take-card.cio .who-dot { background: var(--recdot); }
-.take-card.hr .who-dot { background: var(--hero); }
+.take-card.cio::before { background: var(--recruiter-accent); }
+.take-card.hr::before { background: var(--coral); }
 .take-card .who-label {
-    font-size: 0.7em;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6em;
     font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
     color: var(--ink-dim);
+    margin-bottom: 8px;
+    display: block;
 }
+.take-card.cio .who-label { color: var(--recruiter-accent); }
+.take-card.hr .who-label { color: var(--coral); }
 .take-card h3 {
-    font-size: 1.2em;
-    margin: 0 0 14px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4em;
+    margin: 0 0 20px;
     color: var(--ink);
-    text-transform: none;
-    letter-spacing: normal;
 }
 .take-card ul {
-    padding-left: 20px;
+    list-style: none;
+    padding: 0;
     margin: 0;
-    font-size: 0.85em;
-    line-height: 1.6;
 }
-.take-card ul li { margin-bottom: 8px; color: var(--ink); }
-.take-card ul li strong { color: var(--hero); }
+.take-card ul li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75em;
+    line-height: 1.55;
+    padding: 10px 0;
+    padding-left: 22px;
+    position: relative;
+    border-bottom: 1px solid var(--stone);
+    color: var(--ink);
+}
+.take-card ul li:last-child { border-bottom: none; }
+.take-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 6px;
+    height: 6px;
+    background: var(--coral);
+    border-radius: 50%;
+}
+.take-card.cio ul li::before { background: var(--recruiter-accent); }
+.take-card ul li strong { color: var(--terracotta); font-weight: 600; }
+.take-card.cio ul li strong { color: var(--recruiter-accent); font-weight: 600; }
 
-/* ====== Closing slide ====== */
+/* ========================================================
+   Slide 17 — Close
+   ======================================================== */
+
 .close-slide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
+    background:
+        radial-gradient(ellipse at top left, var(--coral-soft) 0%, transparent 60%),
+        radial-gradient(ellipse at bottom right, var(--sand) 0%, transparent 60%),
+        var(--paper) !important;
     text-align: center;
+    padding: 100px 90px !important;
 }
 .close-slide h1 {
-    font-size: 2.4em;
-    max-width: 20ch;
-    margin: 0 auto 0.4em;
+    font-size: 3.6em;
+    max-width: 18ch;
+    margin: 0 auto 32px;
     text-align: center;
+    line-height: 1.1;
 }
+.close-slide h1 em { font-style: italic; color: var(--coral); font-weight: 400; }
 .close-slide p {
-    font-size: 1em;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05em;
     color: var(--ink-dim);
-    max-width: 30ch;
+    max-width: 36ch;
     margin: 0 auto;
     text-align: center;
 }
+.close-slide .cta {
+    margin-top: 40px;
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--coral);
+    color: white;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
 
-/* ====== Reveal overrides ====== */
-.reveal .progress { color: var(--accent); }
-.reveal .controls { color: var(--accent); }
-.reveal .slide-number { color: var(--ink-dim); }
+/* ========================================================
+   Section heading slide (chapter breaks)
+   ======================================================== */
+
+.chapter-slide {
+    background:
+        linear-gradient(135deg, var(--cream) 0%, var(--paper) 100%) !important;
+    padding: 90px 100px !important;
+    justify-content: center;
+}
+.chapter-slide .chapter-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9em;
+    font-weight: 400;
+    color: var(--coral);
+    letter-spacing: 0.35em;
+    display: block;
+    margin-bottom: 24px;
+}
+.chapter-slide h1 {
+    font-size: 3.6em;
+    max-width: 16ch;
+    line-height: 1.05;
+}
+.chapter-slide h1 em { font-style: italic; color: var(--coral); font-weight: 400; }
+.chapter-slide p.lead {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95em;
+    color: var(--ink-dim);
+    max-width: 44ch;
+    margin-top: 30px;
+    line-height: 1.6;
+}
