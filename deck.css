@@ -14,17 +14,17 @@
     --ink-dim: #5a5a5a;
     --ink-quiet: #8a8a8a;
 
-    /* NJ Department of State palette — buff & blue */
-    --coral: #a08b52;         /* NJ buff-dark (Paul/candidate accent) */
-    --coral-soft: #efe5cc;    /* NJ buff-light */
-    --terracotta: #8a6f2a;
-    --sage: #4a6741;
-    --sage-soft: #d9e3d4;
-    --plum: #6d4c41;
-    --plum-soft: #e0d7d1;
-    --navy: #002b5c;          /* NJ state blue (recruiter accent) */
-    --navy-soft: #d6e0ee;     /* NJ blue-light */
-    --gold: #c9b37a;          /* NJ buff */
+    /* Accent palette (muted, magazine-y) */
+    --coral: #d97757;         /* warm orange-red, primary */
+    --coral-soft: #f4d5c1;
+    --terracotta: #c05621;
+    --sage: #6b8e5a;
+    --sage-soft: #d4e0c9;
+    --plum: #7d4a5c;
+    --plum-soft: #e5c9d0;
+    --navy: #2c3e5c;
+    --navy-soft: #c8d4e3;
+    --gold: #c9962b;
 
     /* Persona color coding */
     --paul-tint: var(--coral-soft);
